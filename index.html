@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <title>GoToJson</title>
+</head>
+
+<body>
+    <main>
+        <form class="input-form">
+            <label for="gocodes" id="form-title">.pb.go structs:</label>
+            <textarea type="text" id="gocodes" rows="30" cols="100">
+type GetCoinRewardRuleWithOrderItemsRequest struct {
+    Region                  *string         `protobuf:"bytes,1,opt,name=region" json:"region,omitempty"`
+    IsFetchFullRule         *bool           `protobuf:"varint,2,opt,name=is_fetch_full_rule,json=isFetchFullRule" json:"is_fetch_full_rule,omitempty"`
+    Platform                *uint32         `protobuf:"varint,3,opt,name=platform" json:"platform,omitempty"`
+    ApplyCoinLimitsValidate *bool           `protobuf:"varint,4,opt,name=apply_coin_limits_validate,json=applyCoinLimitsValidate" json:"apply_coin_limits_validate,omitempty"`
+    OrderItems              *OrderWithItems `protobuf:"bytes,5,opt,name=order_items,json=orderItems" json:"order_items,omitempty"`
+    XXX_unrecognized        []byte          `json:"-"`
+}
+            </textarea>
+            <button type="submit" id="form-submit">Tranfer To Json</button>
+        </form>
+    </main>
+
+    <footer>
+        <h4>Leo Zhou &copy; 2022</h4>
+        <h4>Source Code: <a href="#">Github</a></h4>
+    </footer>
+    <script src="./app.js"></script>
+</body>
+
+</html>
