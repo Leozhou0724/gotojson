@@ -229,10 +229,18 @@ function checkLineType(line){
     if (line[line.length-1]=="{"){
         return lineTypeStructStart
     }
+    if (line==""){
+        return lineTypeUnknown
+    }
     if (line[0]=="}"){
         return lineTypeStructEnd
     }
     if (line.trim()!=""){
+        if (line.length>=2){
+            if (line.slice(0,2)=="//"){
+                return lineTypeUnknown
+            }
+        }
         return lineTypeStructParam
     }
     return lineTypeUnknown
