@@ -31,7 +31,6 @@ form.addEventListener("submit", (e) => {
         structs.push(struct)
     })
     jsons=[]
-    console.log(structs)
     structs.forEach(function(struct){
         if (structsMap[struct.name].used!=undefined){
             return 
@@ -43,7 +42,7 @@ form.addEventListener("submit", (e) => {
     jsons.forEach(function(json){
         show=JSON.stringify(json,null,2)+"\n"
     })
-    output.innerHTML=show
+    output.value=show
 });
 
 function structToJson(struct,structsMap){
@@ -214,23 +213,27 @@ function parseStructLines(lines){
 
 function parseLines(text){  
     let lines = text.split("\n")
-    return lines
+    let trimedLines=[]
+    lines.forEach(function(line){
+        trimedLines.push(line.trim())
+    })
+    return trimedLines
 }
 
-const lineTypeUnknow= 0
+const lineTypeUnknown= 0
 const lineTypeStructStart = 1
 const lineTypeStructParam = 2
 const lineTypeStructEnd = 3
 
 function checkLineType(line){
-    if (line.includes("{")){
+    if (line[line.length-1]=="{"){
         return lineTypeStructStart
     }
-    if (line.includes("}")){
+    if (line[0]=="}"){
         return lineTypeStructEnd
     }
     if (line.trim()!=""){
         return lineTypeStructParam
     }
-    return lineTypeUnknow
+    return lineTypeUnknown
 }

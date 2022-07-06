@@ -44,11 +44,13 @@ header h3 {
     border: none;
     padding: 1rem;
     font-size: 1.5rem;
-    background: rgb(99, 99, 99);
-    color: white;
-    margin-top: 16rem;
-    margin-bottom: 16rem;
+    background: rgb(18, 188, 6);
+    color: rgb(255, 255, 255);
+    margin-top: 18rem;
+    margin-bottom: 18rem;
     position: relative;
+    transform: translateX(0.8rem);
+    border-radius: 1rem;
 }
 
 

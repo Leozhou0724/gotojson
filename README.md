@@ -1,2 +1,4 @@
 ## GOTOJSON
-It's a package to generate json object with go structs
+Online tool to generate json object with go structs
+## Try it!
+https://gotojson.netlify.app/

@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css" />
-    <title>GoToJson</title>
+    <title>gotojson</title>
+    <link rel="icon" href="./goicon.png" />
 </head>
 
 <body>
@@ -17,18 +18,25 @@
         <div class="panels">
                 <form class="input-form">
                     <textarea type="text" id="gocodes" rows="30" cols="80">
-type GetCoinRewardRuleWithOrderItemsRequest struct {
-    Region                  *string         `protobuf:"bytes,1,opt,name=region" json:"region,omitempty"`
-    IsFetchFullRule         *bool           `protobuf:"varint,2,opt,name=is_fetch_full_rule,json=isFetchFullRule" json:"is_fetch_full_rule,omitempty"`
-    Platform                *uint32         `protobuf:"varint,3,opt,name=platform" json:"platform,omitempty"`
-    ApplyCoinLimitsValidate *bool           `protobuf:"varint,4,opt,name=apply_coin_limits_validate,json=applyCoinLimitsValidate" json:"apply_coin_limits_validate,omitempty"`
-    OrderItems              *OrderWithItems `protobuf:"bytes,5,opt,name=order_items,json=orderItems" json:"order_items,omitempty"`
-    XXX_unrecognized        []byte          `json:"-"`
+type AddUserRequest struct {
+ ManagerId int64  `protobuf:"varint,1,opt,name=manager_id,json=managerId,proto3" json:"manager_id,omitempty"`
+ Token string `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`
+ Platform int32  `protobuf:"varint,3,opt,name=platform,proto3" json:"platform,omitempty"`
+ NewUser *User  `protobuf:"bytes,4,opt,name=new_user,json=newUser,proto3" json:"new_user,omitempty"`
+ XXX_NoUnkeyedLiteral struct{} `json:"-"`
+ XXX_unrecognized []byte `json:"-"`
+ XXX_sizecache  int32  `json:"-"`
+}       
+type User struct {
+ Uid uint64 `protobuf:"varint,1,opt,name=uid,proto3" json:"uid,omitempty"`
+ Email string `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+ Nickname string `protobuf:"bytes,3,opt,name=nickname,proto3" json:"nickname,omitempty"`
+ Icon string `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+ XXX_NoUnkeyedLiteral struct{} `json:"-"`
+ XXX_unrecognized []byte `json:"-"`
+ XXX_sizecache  int32  `json:"-"`
 }
 
-type OrderWithItems struct {
-	Hi string
-}
             </textarea>
                     <button type="submit" id="form-submit">To Json >></button>
                 </form>
@@ -42,7 +50,7 @@ type OrderWithItems struct {
 
     <footer>
         <h4>Leo Zhou &copy; 2022</h4>
-        <h4>Source Code: <a href="#">Github</a></h4>
+        <h4><a href="https://github.com/Leozhou0724/gotojson">Github</a></h4>
     </footer>
     <script src="./app.js"></script>
 </body>
