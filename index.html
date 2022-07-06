@@ -11,9 +11,12 @@
 
 <body>
     <main>
-        <form class="input-form">
-            <label for="gocodes" id="form-title">.pb.go structs:</label>
-            <textarea type="text" id="gocodes" rows="30" cols="100">
+        <header>
+            <h3>Input Go Structs</h3>
+        </header>
+        <div class="panels">
+                <form class="input-form">
+                    <textarea type="text" id="gocodes" rows="30" cols="80">
 type GetCoinRewardRuleWithOrderItemsRequest struct {
     Region                  *string         `protobuf:"bytes,1,opt,name=region" json:"region,omitempty"`
     IsFetchFullRule         *bool           `protobuf:"varint,2,opt,name=is_fetch_full_rule,json=isFetchFullRule" json:"is_fetch_full_rule,omitempty"`
@@ -22,9 +25,19 @@ type GetCoinRewardRuleWithOrderItemsRequest struct {
     OrderItems              *OrderWithItems `protobuf:"bytes,5,opt,name=order_items,json=orderItems" json:"order_items,omitempty"`
     XXX_unrecognized        []byte          `json:"-"`
 }
+
+type OrderWithItems struct {
+	Hi string
+}
             </textarea>
-            <button type="submit" id="form-submit">Tranfer To Json</button>
-        </form>
+                    <button type="submit" id="form-submit">To Json >></button>
+                </form>
+            <div class="output-panel">
+                <textarea type="text" id="output" rows="30" cols="80">
+
+            </textarea>
+            </div>
+        </div>
     </main>
 
     <footer>

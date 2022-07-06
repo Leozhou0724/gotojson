@@ -6,3 +6,6 @@ type GetCoinRewardRuleWithOrderItemsRequest struct {
 	OrderItems              *OrderWithItems `protobuf:"bytes,5,opt,name=order_items,json=orderItems" json:"order_items,omitempty"`
 	XXX_unrecognized        []byte          `json:"-"`
 }
+type OrderWithItems struct {
+	Hi string
+}
